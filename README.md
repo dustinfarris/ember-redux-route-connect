@@ -34,7 +34,7 @@ const model = (dispatch, params) => {
   // Nothing new here, do some async work.. or don't
   return fetch(`/api/items${params.item_id}`).then(response => {
     response.json().then(data => {
-      dispatch({ 'RECEIVE_ITEM', data });
+      dispatch({ type: 'RECEIVE_ITEM', data });
     });
   });
 };
