@@ -1,5 +1,7 @@
 # ember-redux-route-connect
 
+[![CircleCI](https://circleci.com/gh/dustinfarris/ember-redux-route-connect.svg?style=svg)](https://circleci.com/gh/dustinfarris/ember-redux-route-connect)
+
 Connect your routes to redux state/dispatch with queryParams.
 
 
