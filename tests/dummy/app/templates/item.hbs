@@ -1,0 +1,11 @@
+<div class="item-name">{{item.name}}</div>
+<div class="model">{{model}}</div>
+<div>
+  New name:
+  <input class="item-name-edit" value={{newItemName}} oninput={{action (mut newItemName) value="target.value"}}>
+  <button class="item-name-edit-submit" {{action "edit" newItemName}}>Change name</button>
+</div>
+<div class="computed-query-param">{{computedQueryParam}}</div>
+<div>
+  <input class="query-param-edit" value={{testQuery}} oninput={{action (mut testQuery) value="target.value"}}>
+</div>
