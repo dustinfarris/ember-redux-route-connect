@@ -68,3 +68,5 @@ Your route's template would look much the same as a connected component's templa
   <button {{action "deleteItem"}}>Delete Item</button>
 {{/unless}}
 ```
+
+Check out the dummy app for a little more.
