@@ -32,6 +32,11 @@ import { getItemById } from '../reducers';
 
 const model = (dispatch, params) => {
   // Nothing new here, do some async work.. or don't
+  return fetch(`/api/items${params.item_id}`).then(response => {
+    response.json().then(data => {
+      dispatch({ 'RECEIVE_ITEM', data });
+    });
+  });
 };
 
 const stateToComputed = (state, params) => {
@@ -62,9 +67,9 @@ Your route's template would look much the same as a connected component's templa
 
 ```hbs
 {{#unless item}}
-<p>
-  This item has been deleted :(
-</p>
+  <p>
+    This item has been deleted :(
+  </p>
 {{else}}
   <h1>{{item.name}}</h1>
   <button {{action "deleteItem"}}>Delete Item</button>
