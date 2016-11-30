@@ -33,23 +33,23 @@ export default (stateToComputed=() => ({}), dispatchToActions=() => ({})) => {
         const params = this.getCurrentParams(controller);
         const props = stateToComputed(redux.getState(), params);
 
-        for (let name in props) {
+        Object.keys(props).forEach(name => {
           defineProperty(controller, name, computed(() =>
             stateToComputed(redux.getState(), this.getCurrentParams(controller))[name]
           ).property().readOnly());
-        }
+        });
 
         if (!isEmpty(Object.keys(props))) {
           this.unsubscribe = redux.subscribe(() => {
             run(() => this.handleChange(controller));
           });
-          for (let param in params) {
+          Object.keys(params).forEach(param => {
             if (controller.queryParams.includes(param)) {
               controller.addObserver(param, () => {
                 run(() => this.handleChange(controller));
               });
             }
-          }
+          });
         }
 
         controller.actions = Object.assign({},
@@ -66,11 +66,11 @@ export default (stateToComputed=() => ({}), dispatchToActions=() => ({})) => {
         );
         const props = stateToComputed(redux.getState(), params);
 
-        for (let name in props) {
+        Object.keys(props).forEach(name => {
           if (controller.get(name) !== props[name]) {
             controller.notifyPropertyChange(name);
           }
-        }
+        });
       },
 
       deactivate() {
