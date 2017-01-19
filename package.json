@@ -39,7 +39,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.1",
     "ember-network": "0.3.0",
-    "ember-redux": "1.9.1",
+    "ember-redux": "2.0.0-beta.5",
     "ember-resolver": "^2.0.3",
     "loader.js": "^4.0.10",
     "redux": "3.6.0",
