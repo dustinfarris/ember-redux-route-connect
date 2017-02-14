@@ -14,6 +14,7 @@ test('computed properties', assert => {
     assert.equal(currentURL(), '/item/123?testQuery=ABCDEFG', 'url should contain query');
     assert.equal(find('.item-name').text(), 'Item number one two three', 'redux state change should be rendered');
     assert.equal(find('.computed-query-param').text(), 'ABCDEFG', 'computed query params should be rendered');
+    assert.equal(find('.model').text(), '123', 'computed model should pull from statesToCompute');
   });
 });
 

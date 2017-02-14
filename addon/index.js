@@ -51,7 +51,7 @@ export default (stateToComputed=() => ({}), dispatchToActions=() => ({})) => {
         const redux = this.get('redux');
         const params = this.getCurrentParams(controller);
         const props = stateToComputed(redux.getState(), params);
-
+        this._super(...arguments);
         // Add new props to the controller
         Object.keys(props).forEach(name => {
           defineProperty(controller, name, computed(() =>
@@ -78,8 +78,6 @@ export default (stateToComputed=() => ({}), dispatchToActions=() => ({})) => {
         controller.actions = Object.assign({},
           controller.actions, dispatchToActions(redux.dispatch.bind(redux), params)
         );
-
-        this._super(...arguments);
       },
 
       /**

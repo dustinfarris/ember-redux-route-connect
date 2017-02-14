@@ -36,6 +36,7 @@ const stateToComputed = (state, params) => {
   Ember.Logger.debug(params);
 
   return {
+    model: params.item_id,
     item: getItemById(state, params.item_id),
     computedQueryParam: params.testQuery
   };
