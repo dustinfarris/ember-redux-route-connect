@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "",
+  "repository": "dustinfarris/ember-redux-route-connect",
   "engines": {
     "node": ">= 0.12.0"
   },
